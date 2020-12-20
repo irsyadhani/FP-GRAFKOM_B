@@ -95,7 +95,7 @@ var gameSettings = {
 const defaultBodyColor = [180, 0, 0];
 const defaultLegsColor = [30, 90, 168];
 
-var playerSettings = { name:'Player' }
+var playerSettings = { name:'Irsyad-sensei' }
 
 var gui, playersFolder, gfxFolder, controlsFolder, audioFolder, gameFolder;
 
@@ -1084,7 +1084,7 @@ function createExercise() {
     exerciseGroup.position.y = 200;
     exerciseGroup.position.z = -WORLD.plateSize;
 
-    // scene.add(exerciseGroup);
+    scene.add(exerciseGroup);
 
 }
 
@@ -1203,7 +1203,9 @@ function onDocumentClick( event ) {
     event.preventDefault();
 
     if (testMode) {
-        addChrystal();
+        if(chrystalCount < 6){
+            addChrystal();
+            }
     }
 
     if (currentHighlight) {
@@ -1218,7 +1220,9 @@ function evaluateAnswer(obj) {
         SFX.play(obj.parent.sound, true);
         
         if (obj.parent.isResult) {
+            if(chrystalCount < 6){
             addChrystal();
+            }
         }
         else {
             
@@ -1423,58 +1427,58 @@ function performChrystalAction() {
         }
     }
 
-    if (chrystalCount == chrActions.prepareRoads) {
-        WORLD.prepareRoads();
-    }
+    // if (chrystalCount == chrActions.prepareRoads) {
+    //     WORLD.prepareRoads();
+    // }
 
-    if (chrystalCount == chrActions.initRoads) {
-        showProgressBar();
-        WORLD.initRoads(function (newModel) {
-            hideProgressBar();
-            // play transition sound
-            SFX.play(SFX.newItemSound);
-        }, onProgress, onError);
-    }
+    // if (chrystalCount == chrActions.initRoads) {
+    //     showProgressBar();
+    //     WORLD.initRoads(function (newModel) {
+    //         hideProgressBar();
+    //         // play transition sound
+    //         SFX.play(SFX.newItemSound);
+    //     }, onProgress, onError);
+    // }
 
-    if (chrystalCount >= chrActions.carsMin && !isNight && (cars.length <= chrActions.carsMax - chrActions.carsMin)) {
-        // adding cars at night stops too long due to shader recompiling...
-        addCar();
-    }
+    // if (chrystalCount >= chrActions.carsMin && !isNight && (cars.length <= chrActions.carsMax - chrActions.carsMin)) {
+    //     // adding cars at night stops too long due to shader recompiling...
+    //     addCar();
+    // }
 
-    if (chrystalCount >= chrActions.animalsMin && chrystalCount <= chrActions.animalsMax) {
-        addAnimal();
-    }
+    // if (chrystalCount >= chrActions.animalsMin && chrystalCount <= chrActions.animalsMax) {
+    //     addAnimal();
+    // }
 
-    if (chrystalCount == chrActions.musicSphere) {
-        addMusicSphere();
-    }
+    // if (chrystalCount == chrActions.musicSphere) {
+    //     addMusicSphere();
+    // }
 
-    if (chrystalCount == chrActions.prepareTracks) {
-        TRAIN.prepareTracks(mixer);
-    }
+    // if (chrystalCount == chrActions.prepareTracks) {
+    //     TRAIN.prepareTracks(mixer);
+    // }
 
-    if (chrystalCount == chrActions.initTracks) {
-        showProgressBar();
-        TRAIN.initTracks(function (track) {
-            hideProgressBar();
-        } , onProgress, onError);
-    }
+    // if (chrystalCount == chrActions.initTracks) {
+    //     showProgressBar();
+    //     TRAIN.initTracks(function (track) {
+    //         hideProgressBar();
+    //     } , onProgress, onError);
+    // }
 
-    if (chrystalCount == chrActions.trainMin) {
-        initTrain();
-    }
+    // if (chrystalCount == chrActions.trainMin) {
+    //     initTrain();
+    // }
 
-    if (chrystalCount > chrActions.trainMin && chrystalCount <= chrActions.trainMax) {
-        addWaggon(chrystalCount == chrActions.trainMax);
-    }
+    // if (chrystalCount > chrActions.trainMin && chrystalCount <= chrActions.trainMax) {
+    //     addWaggon(chrystalCount == chrActions.trainMax);
+    // }
 
-    if ((chrystalCount % chrActions.nightMod) == 0) {
-        toggleNight();
-    }
+    // if ((chrystalCount % chrActions.nightMod) == 0) {
+    //     toggleNight();
+    // }
 
-    if (chrystalCount > chrActions.createSky) {
-        toggleWeatherEffects();
-    }
+    // if (chrystalCount > chrActions.createSky) {
+    //     toggleWeatherEffects();
+    // }
 }
 
 function addAnimal() {
