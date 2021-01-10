@@ -1,7 +1,7 @@
-<div align="center">
 # FP-GRAFKOM-B
 
-<img src="https://github.com/irsyadhani/FP-GRAFKOM_B/blob/main/habitacion.png" width="200px" height="200px">
+<div align="center">
+<img src="https://github.com/irsyadhani/FP-GRAFKOM_B/blob/main/favicon.png" width="200px" height="200px">
 </div>
 
 
