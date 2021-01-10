@@ -1,4 +1,11 @@
 # FP-GRAFKOM-B
+
+<div align="center">
+<img src="https://github.com/irsyadhani/FP-GRAFKOM_B/edit/main/habitacion.png" width="200px" height="200px">
+## Habitacion
+### Education Game
+</div>
+
 Builds Educatin game that who inspired by film "Who Wants to Be a Millionaire?"
 
 Steps to run:
