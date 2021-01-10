@@ -1,11 +1,7 @@
+<div align="center">
 # FP-GRAFKOM-B
 
-<div align="center">
 <img src="https://github.com/irsyadhani/FP-GRAFKOM_B/blob/main/habitacion.png" width="200px" height="200px">
-  
-## Habitacion
-
-### Education Game
 </div>
 
 
